@@ -1,0 +1,45 @@
+html,
+body {
+  overflow-x: hidden;
+}
+
+.bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.934), rgba(0, 0, 0, 0.745)),
+    url("../assets/techh.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.animate-gradient {
+  animation: gradientBackground 5s ease-in-out infinite;
+}
+
+.loading-text {
+  background: linear-gradient(
+      90deg,
+      rgb(90, 93, 225),
+      rgb(127, 127, 173),
+      rgb(163, 163, 223)
+    ) -100%/ 200%;
+  /* being excessively careful with compat, 
+	 * though this has been supported unprefixed and 
+	 * in the shorthand across major browsers for a while */
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* use color, don't use -webkit-text-fill-color anymore, 
+	 * was meant to solve a problem we haven't had in years */
+  color: transparent;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 100%;
+  }
+}
+
+/* Apply the animation to the element */
+.animate-gradient {
+  animation: gradientBackground 5s ease-in-out infinite;
+}
