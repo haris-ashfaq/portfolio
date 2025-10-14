@@ -1,31 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Contact = () => {
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-    const [status, setStatus] = useState('');
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [responseMsg, setResponseMsg] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setStatus('Sending...');
         try {
-            const res = await fetch('http://localhost:5000/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData),
+            const res = await fetch("http://localhost:5000/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ name, email, message }),
             });
+
             const data = await res.json();
+
             if (res.ok) {
-                setStatus('Message sent successfully!');
-                setFormData({ name: '', email: '', message: '' });
+                setResponseMsg("Message sent successfully!");
+                setName("");
+                setEmail("");
+                setMessage("");
             } else {
-                setStatus(data.error || 'Something went wrong!');
+                setResponseMsg(data.error || "Something went wrong.");
             }
         } catch (error) {
-            setStatus('Failed to connect to the server.');
+            setResponseMsg("Failed to send message. Server error.");
         }
     };
 
@@ -39,16 +42,19 @@ const Contact = () => {
                     <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-300">
                         We’d love to hear from you! Send us your message below.
                     </p>
+                    {responseMsg && (
+                        <p className="mt-4 text-green-400 font-medium">{responseMsg}</p>
+                    )}
                 </div>
-                <form onSubmit={handleSubmit} className="lg:w-1/2 md:w-2/3 mx-auto">
+                <form className="lg:w-1/2 md:w-2/3 mx-auto" onSubmit={handleSubmit}>
                     <div className="flex flex-wrap -m-2">
                         <div className="p-2 w-1/2">
                             <label className="leading-7 text-sm text-blue-500">Name</label>
                             <input
                                 type="text"
                                 name="name"
-                                value={formData.name}
-                                onChange={handleChange}
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                                 className="w-full bg-gray-900 text-white border border-purple-700 rounded py-1 px-3"
                                 required
                             />
@@ -58,8 +64,8 @@ const Contact = () => {
                             <input
                                 type="email"
                                 name="email"
-                                value={formData.email}
-                                onChange={handleChange}
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                                 className="w-full bg-gray-900 text-white border border-purple-700 rounded py-1 px-3"
                                 required
                             />
@@ -68,8 +74,8 @@ const Contact = () => {
                             <label className="leading-7 text-sm text-blue-500">Message</label>
                             <textarea
                                 name="message"
-                                value={formData.message}
-                                onChange={handleChange}
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
                                 className="w-full bg-gray-900 text-white border border-purple-700 rounded py-1 px-3 h-32"
                                 required
                             ></textarea>
@@ -82,9 +88,6 @@ const Contact = () => {
                                 Send Message
                             </button>
                         </div>
-                        {status && (
-                            <p className="w-full text-center text-gray-300 mt-4">{status}</p>
-                        )}
                     </div>
                 </form>
             </div>

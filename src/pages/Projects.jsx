@@ -1,6 +1,7 @@
 import React from 'react';
 import pro from '../assets/pro.png';
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 export const Projects = () => {
     return (
@@ -37,13 +38,13 @@ export const Projects = () => {
 
                     <div>
 
-                        <a
-                            href="#"
+                        <Link
+                            to="http://www.facebook.com"
                             className="inline-flex items-center gap-2 mt-2  text-black rounded-lg"
                         >
                             View Project
                             <FaArrowRight />
-                        </a>
+                        </Link>
 
                     </div>
                 </div>

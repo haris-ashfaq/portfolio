@@ -75,19 +75,19 @@ const Skills = () => {
       </h2>
       <p className="text-white text-center md:mt-2">Here are my some technical skills</p>
 
-      {/* Frontend */}
+
       <div className="mt-12">
         <h3 className="text-2xl font-semibold text-center text-white mb-4">Frontend</h3>
         {renderCards(frontendSkills)}
       </div>
 
-      {/* Backend */}
+
       <div className="mt-12">
         <h3 className="text-2xl font-semibold text-center text-white mb-4">Backend</h3>
         {renderCards(backendSkills)}
       </div>
 
-      {/* Database */}
+
       <div className="mt-12">
         <h3 className="text-2xl font-semibold text-center text-white mb-4">Database</h3>
         {renderCards(databaseSkills)}
