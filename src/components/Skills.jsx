@@ -40,7 +40,7 @@ const Skills = () => {
     { name: "PostgreSQL", icon: <SiPostgresql className="text-4xl text-blue-500" />, level: 75 },
   ];
 
-  // Reusable card renderer with progress bar
+
   const renderCards = (skills) => (
     <div className="grid grid-cols-1 p-5 sm:grid-cols-2 mt-0 md:grid-cols-5 gap-6  md:mt-6">
       {skills.map((skill, index) => (
@@ -54,7 +54,7 @@ const Skills = () => {
             {skill.icon}
             <span className="mt-3 font-semibold">{skill.name}</span>
 
-            {/* Progress bar container */}
+
             <div className="w-full bg-gray-800 rounded-full h-3 mt-4">
               <div
                 className="bg-gradient-to-r from-purple-400 to-blue-400 h-3 rounded-full transition-all duration-700"
