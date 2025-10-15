@@ -38,13 +38,14 @@ export const Projects = () => {
 
                     <div>
 
-                        <Link
-                            to="http://www.facebook.com"
+                        <a
+                            href="https://biznus-template.webflow.io/"
+                            target='_blank'
                             className="inline-flex items-center gap-2 mt-2  text-black rounded-lg"
                         >
                             View Project
                             <FaArrowRight />
-                        </Link>
+                        </a>
 
                     </div>
                 </div>

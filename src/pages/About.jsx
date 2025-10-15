@@ -10,7 +10,7 @@ const About = () => {
     return (
         <section className="bg-black  text-white py-5 px-6" id="about">
             <div className="max-w-4xl mx-auto text-center">
-                {/* Heading */}
+
                 <h2
                     data-aos="zoom-in"
                     className="text-4xl font-bold mt-20 mb-3 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-blue-500"
@@ -27,7 +27,7 @@ const About = () => {
                     My focus is to understand client needs and translate them into user-friendly, responsive solutions.
                 </p>
 
-                {/* Social Links */}
+
                 <div
                     data-aos="zoom-in"
                     className="flex justify-center gap-6 mb-10"
@@ -43,7 +43,7 @@ const About = () => {
                     </a>
                 </div>
 
-                {/* Contact Form */}
+
                 <div
                     data-aos="fade-up"
                     className="bg-gradient-to-r from-purple-700 to-blue-500 text-black rounded-2xl shadow-lg p-6 max-w-md mx-auto"
