@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/hero.css';
 import cv from "../assets/bilal bhai.pdf"
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     return (
@@ -28,10 +29,11 @@ const Hero = () => {
                                     Download CV
                                 </button>
                             </a>
-
-                            <button className="text-white mt-2 text-[1rem] cursor-pointer  px-6 py-2 border rounded">
-                                View Projects
-                            </button>
+                            <Link to="/projects">
+                                <button className="text-white mt-2 text-[1rem] cursor-pointer  px-6 py-2 border rounded">
+                                    See my work
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -18,19 +18,19 @@ const Skills = () => {
     AOS.init({ duration: 1000 });
   }, []);
 
-  // Add skill levels with percentage
   const frontendSkills = [
     { name: "HTML5", icon: <FaHtml5 className="text-4xl text-orange-400" />, level: 90 },
     { name: "CSS3", icon: <FaCss3Alt className="text-4xl text-blue-600" />, level: 85 },
     { name: "JavaScript", icon: <FaJs className="text-4xl text-yellow-300" />, level: 80 },
     { name: "ReactJS", icon: <FaReact className="text-4xl text-cyan-300" />, level: 75 },
-    { name: "Tailwind CSS", icon: <RiTailwindCssFill className="text-4xl text-cyan-300" />, level: 75 }
+    { name: "Tailwind CSS", icon: <RiTailwindCssFill className="text-4xl text-cyan-300" />, level: 75 },
+    { name: "Next.js", icon: <RiNextjsFill className="text-4xl text-cyan-300" />, level: 75 }
   ];
 
   const backendSkills = [
     { name: "NodeJS", icon: <FaNodeJs className="text-4xl text-green-400" />, level: 60 },
     { name: "ExpressJS", icon: <SiExpress className="text-4xl text-gray-300" />, level: 70 },
-    { name: "Django", icon: <FaJs className="text-4xl text-t-300" />, level: 70 },
+    { name: "Javascript", icon: <FaJs className="text-4xl text-t-300" />, level: 70 },
   ];
 
 
